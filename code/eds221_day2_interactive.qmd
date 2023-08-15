@@ -8,6 +8,7 @@ execute:
 
 ```{r}
 library(tidyverse)
+library(here)
 ```
 
 ## Making and indexing data in R
@@ -189,6 +190,4 @@ starwars$starships[2]
 # these two lines do the same thing, returning the second element of the first row of "starships"
 starwars$starships[[1]][2] # indexes into the vector, and then indexes into that for the 2nd element of that vector
 pluck(starwars, "starships", 1, 2)
-
-
 ```
