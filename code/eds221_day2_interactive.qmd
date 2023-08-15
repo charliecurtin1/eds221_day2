@@ -131,3 +131,38 @@ fish_size[, 2]
 make an edit!
 
 ## Lists
+
+```{r}
+urchins <- list("blue", values = c(1, 2, 3), c("lunch", "dinner", "desert"), cost = 5L)
+
+urchins
+str(urchins)
+```
+
+```{r}
+# single brackets returns that value but maintains the data structure
+urchins_list <- urchins[2]
+
+# double brackets returns the type of that element
+urchins_vector <- urchins [[2]]
+
+# you can call elements by names
+urchins$values
+```
+
+```{r}
+sample1 <- c(1, 2, 3, 5, 7, 9, 10)
+
+sample2 <- c(3, 6, 9, 12, 13)
+
+# example of benefits of naming elements in a list
+ttest_example <- t.test(sample1, sample2)
+
+class(ttest_example)
+
+ttest_example$statistic
+```
+
+```{r}
+
+```
