@@ -104,3 +104,10 @@ i <- seq(1:3) # same as writing seq(from = 1, to = 3)
 
 trees[i]
 ```
+
+```{r}
+# vectors are mutable, meaning you can reassign values
+trees[3] <- "oak"
+
+trees
+```
