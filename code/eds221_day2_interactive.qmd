@@ -6,6 +6,10 @@ execute:
   warning: false
 ---
 
+```{r}
+library(tidyverse)
+```
+
 ## Making and indexing data in R
 
 ### Vectors
@@ -131,3 +135,60 @@ fish_size[, 2]
 make an edit!
 
 ## Lists
+
+```{r}
+urchins <- list("blue", values = c(1, 2, 3), c("lunch", "dinner", "desert"), cost = 5L)
+
+urchins
+str(urchins)
+```
+
+```{r}
+# single brackets returns that value but maintains the data structure
+urchins_list <- urchins[2]
+
+# double brackets returns the type of that element
+urchins_vector <- urchins [[2]]
+
+# you can call elements by names
+urchins$values
+```
+
+```{r}
+sample1 <- c(1, 2, 3, 5, 7, 9, 10)
+
+sample2 <- c(3, 6, 9, 12, 13)
+
+# example of benefits of naming elements in a list
+ttest_example <- t.test(sample1, sample2)
+
+class(ttest_example)
+
+ttest_example$statistic
+```
+
+## data frames
+
+```{r}
+fruit <- data.frame(type = c("apple", "banana", "peach"),
+                    mass = c(130, 150, 170))
+
+fruit[2, 2]
+# purrr package for pulling elements from a data frame
+# looks in data frame, then the column called "type", then the value in that row
+purrr::pluck(fruit, "type", 2)
+```
+
+```{r}
+names(starwars)
+
+pluck(starwars, "starships", 1, 2)
+
+starwars$starships[2]
+
+# these two lines do the same thing, returning the second element of the first row of "starships"
+starwars$starships[[1]][2] # indexes into the vector, and then indexes into that for the 2nd element of that vector
+pluck(starwars, "starships", 1, 2)
+
+
+```
