@@ -2,6 +2,105 @@
 title: "EDS 221 Day 2"
 format: html
 editor: visual
+execute: 
+  warning: false
 ---
 
-## 
+## Making and indexing data in R
+
+### Vectors
+
+#### Making vectors
+
+```{r}
+# make a vector with c()
+dogs <- c("teddy", "khora", "waffle", "banjo", "tallie")
+
+#check class of dogs
+class(dogs)
+typeof(dogs)
+```
+
+```{r}
+# vectors have to have elements of the same type
+breakie <- c("waffles", 2, TRUE, "coffee")
+
+typeof(breakie)
+```
+
+```{r}
+weights <- c(50, 60, 25, 35, 55)
+# these return different options (numeric vs double)
+class(weights)
+typeof(weights)
+```
+
+```{r}
+# force them to be integer values
+
+weight_int <- c(50L, 60L, 25L, 35L, 55L)
+
+typeof(weight_int)
+class(weight_int)
+```
+
+```{r}
+# is.(type) asks a question and returns true or false
+is.numeric(weight_int)
+```
+
+```{r}
+# change/recast class
+zip_codes <- c(93105, 90064, 92118, 90210, 93117)
+# use as. family - gives an instruction (same ones you can is. on you can use as. on)
+class(zip_codes)
+
+zip_codes_chr <- as.character(zip_codes)
+
+class(zip_codes_chr)
+```
+
+### Create a vector with named elements
+
+```{r}
+# add names to values in a vector. doesn't actually add values. Class only corresponds to stored values
+dog_food <- c(teddy = "purina", khora = "alpo", waffle = "fancy feast", banjo = "blue diamond", tallie = "farmers dog")
+
+dog_food
+```
+
+```{r}
+# access ordered elements from a vector. R uses a 1-index, meaning first element of a vector is given position of 1. other coding languages use a 0-index
+dog_food[2]
+
+# if an element is named you can also call the name
+dog_food["khora"]
+```
+
+### Access ranges of values in a vector
+
+#### use : to refer to a range (low:high)
+
+```{r}
+# return a range of values
+trees <- c("ponderosa", "lodgepole", "jeffrey", "sugar", "bristlecone", "grey")
+
+trees[3:6]
+```
+
+### Warm-up for for loops
+
+#### for loops- iterates through values
+
+```{r}
+# index
+i <- 4
+
+trees[i]
+```
+
+```{r}
+i <- seq(1:3) # same as writing seq(from = 1, to = 3)
+
+trees[i]
+```
