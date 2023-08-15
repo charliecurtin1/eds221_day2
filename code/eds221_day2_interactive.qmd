@@ -6,6 +6,10 @@ execute:
   warning: false
 ---
 
+```{r}
+library(tidyverse)
+```
+
 ## Making and indexing data in R
 
 ### Vectors
@@ -163,6 +167,28 @@ class(ttest_example)
 ttest_example$statistic
 ```
 
+## data frames
+
 ```{r}
+fruit <- data.frame(type = c("apple", "banana", "peach"),
+                    mass = c(130, 150, 170))
+
+fruit[2, 2]
+# purrr package for pulling elements from a data frame
+# looks in data frame, then the column called "type", then the value in that row
+purrr::pluck(fruit, "type", 2)
+```
+
+```{r}
+names(starwars)
+
+pluck(starwars, "starships", 1, 2)
+
+starwars$starships[2]
+
+# these two lines do the same thing, returning the second element of the first row of "starships"
+starwars$starships[[1]][2] # indexes into the vector, and then indexes into that for the 2nd element of that vector
+pluck(starwars, "starships", 1, 2)
+
 
 ```
