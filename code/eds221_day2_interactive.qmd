@@ -111,3 +111,19 @@ trees[3] <- "oak"
 
 trees
 ```
+
+### Matrix indexing + branch practice
+
+```{r}
+fish_size <- matrix(c(.8, .7, .5, .9), ncol = 2, nrow = 2, byrow = FALSE)
+
+fish_size
+
+class(fish_size)
+typeof(fish_size)
+str(fish_size)
+
+fish_size[2,2]
+# look at entire column/row by leaving one blank
+fish_size[, 2]
+```
